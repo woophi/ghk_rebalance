@@ -8,4 +8,9 @@ body {
   background-color: #ffffff;
   position: relative;
   font-family: 'Roboto', sans-serif;
+
+}
+
+* {
+  box-sizing: border-box;
 }
