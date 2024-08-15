@@ -51,6 +51,11 @@ const rowText = style({
   gap: '4px',
 });
 
+const bannerImg = style({
+  borderRadius: '1rem',
+  overflow: 'hidden',
+});
+
 export const appSt = {
   container,
   banner,
@@ -60,4 +65,5 @@ export const appSt = {
   rowText,
   shapeBg,
   shapeText,
+  bannerImg,
 };

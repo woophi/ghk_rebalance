@@ -142,6 +142,10 @@ const textBottom = style({
   flexDirection: 'column',
 });
 
+const tagImg = style({
+  borderRadius: '8px',
+});
+
 const tag = recipe({
   base: {
     width: '60px',
@@ -197,6 +201,12 @@ const tagContainer = style({
   },
 });
 
+const container = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem',
+});
+
 export const compSt = {
   progressContainer,
   progress,
@@ -206,4 +216,6 @@ export const compSt = {
   tag,
   stick,
   tagContainer,
+  tagImg,
+  container,
 };

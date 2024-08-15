@@ -1,15 +1,14 @@
 import { ProgressBar } from '@alfalab/core-components/progress-bar';
 import { Typography } from '@alfalab/core-components/typography';
 import { useEffect, useRef, useState } from 'react';
-import gaz from '../assets/gaz.png';
+import luk from '../assets/luk.png';
 import sber from '../assets/sber.png';
-import { appSt } from '../style.css';
 import { compSt } from './style.css';
 import { useWindowListener } from './useEventListener';
 
 export const CompareLayout = () => {
   return (
-    <div className={appSt.container}>
+    <div className={compSt.container}>
       <Typography.TitleResponsive style={{ marginTop: '1rem' }} tag="h1" view="small" font="system" weight="semibold">
         Потенциал роста
       </Typography.TitleResponsive>
@@ -113,7 +112,7 @@ const CompareProgress = () => {
 
       <div className={compSt.tagContainer} style={{ left: (dotsPositons[1] ?? 0) - 22 }}>
         <div className={compSt.tag({ color: 'orange' })}>
-          <img src={sber} width={26} height={26} />
+          <img src={sber} width={26} height={26} className={compSt.tagImg} />
           <Typography.Text view="primary-small" color="primary-inverted">
             6,1
           </Typography.Text>
@@ -123,7 +122,7 @@ const CompareProgress = () => {
 
       <div className={compSt.tagContainer} style={{ left: (dotsPositons[3] ?? 0) - 22 }}>
         <div className={compSt.tag({ color: 'green' })}>
-          <img src={gaz} width={26} height={26} />
+          <img src={luk} width={26} height={26} className={compSt.tagImg} />
           <Typography.Text view="primary-small" color="primary-inverted">
             8,2
           </Typography.Text>

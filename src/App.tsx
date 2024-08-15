@@ -1,39 +1,39 @@
+import { BottomSheet } from '@alfalab/core-components/bottom-sheet';
 import { ButtonMobile } from '@alfalab/core-components/button/mobile';
 import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
 import { useState } from 'react';
-import gaz from './assets/gaz.png';
+import luk from './assets/luk.png';
 import sber from './assets/sber.png';
 import smile from './assets/smile.png';
 import { CompareLayout } from './compare/CompareLayout';
+import { LongreadLayout } from './longread/LongreadLayout';
+import { lrSt } from './longread/style.css';
 import { Shape } from './Shape';
 import { appSt } from './style.css';
 
 export const App = () => {
   const [compareShow, setCompare] = useState(false);
-
-  if (compareShow) {
-    return <CompareLayout />;
-  }
+  const [longreadShow, setLongread] = useState(false);
 
   return (
     <>
       <div className={appSt.container}>
         <Typography.Text view="primary-medium">
-          В вашем портфеле две бумаги имеют Альфа-рейтинг ниже чем бумаги из того же сектора
+          В вашем портфеле две бумаги имеют Альфа-рейтинг ниже чем бумаги из того же сектора. Не является ИИР.
         </Typography.Text>
 
-        <div className={appSt.banner}>
+        <div className={appSt.banner} onClick={() => setLongread(true)}>
           <img src={smile} width={40} height={40} />
           <Typography.Text view="component-primary">Как мы оцениваем бумаги</Typography.Text>
         </div>
 
         <Typography.TitleResponsive style={{ marginTop: '1rem' }} tag="h2" view="small" font="system" weight="semibold">
-          Финансовый сектор
+          Нефть и газ
         </Typography.TitleResponsive>
         <div className={appSt.bannersWrap}>
           <div className={appSt.banner}>
-            <img src={sber} width={48} height={48} />
+            <img src={sber} width={48} height={48} className={appSt.bannerImg} />
 
             <div className={appSt.rowText}>
               <Typography.Text view="component-primary">Сбербанк</Typography.Text>
@@ -51,12 +51,12 @@ export const App = () => {
           </div>
           <div className={appSt.connect} />
           <div className={appSt.banner}>
-            <img src={gaz} width={48} height={48} />
+            <img src={luk} width={48} height={48} className={appSt.bannerImg} />
 
             <div className={appSt.rowText}>
-              <Typography.Text view="component-primary">Газпром</Typography.Text>
+              <Typography.Text view="component-primary">Лукойл</Typography.Text>
               <Typography.Text view="primary-small" color="secondary">
-                GAZP
+                LKOH
               </Typography.Text>
             </div>
 
@@ -76,12 +76,46 @@ export const App = () => {
             </ButtonMobile>
           </Grid.Col>
           <Grid.Col width="6">
-            <ButtonMobile style={{ width: '100%' }} view="primary">
+            <ButtonMobile
+              style={{ width: '100%' }}
+              view="primary"
+              href="alfabank://redirect_to_ai?link=a-investments://CA?type=isinFromCurrent&value=RU0009024277"
+            >
               Заменить
             </ButtonMobile>
           </Grid.Col>
         </Grid.Row>
       </div>
+
+      <BottomSheet
+        title={
+          <Typography.Text tag="p" view="component" weight="medium" defaultMargins={false}>
+            Альфа-Рейтинг
+          </Typography.Text>
+        }
+        open={longreadShow}
+        onClose={() => setLongread(false)}
+        titleAlign="center"
+        stickyHeader
+        hasCloser
+        contentClassName={lrSt.btmContent}
+      >
+        <LongreadLayout />
+      </BottomSheet>
+      <BottomSheet
+        title={
+          <Typography.Text tag="p" view="component" weight="medium" defaultMargins={false}>
+            Сравнение
+          </Typography.Text>
+        }
+        open={compareShow}
+        onClose={() => setCompare(false)}
+        titleAlign="center"
+        stickyHeader
+        hasCloser
+      >
+        <CompareLayout />
+      </BottomSheet>
     </>
   );
 };
