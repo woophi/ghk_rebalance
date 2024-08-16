@@ -10,8 +10,11 @@ const progressContainer = style({
 const progress = style({
   width: '100%',
 });
+const progressRed = style({
+  width: '100%',
+});
 
-globalStyle(`${progress} > div`, {
+globalStyle(`${progressRed} > div`, {
   background: '#FF5431 !important',
 });
 
@@ -170,6 +173,7 @@ const tag = recipe({
       red: {
         backgroundColor: '#FF5431',
       },
+      gray: {},
     },
   },
 });
@@ -189,6 +193,7 @@ const stick = recipe({
       red: {
         backgroundColor: '#FF5431',
       },
+      gray: {},
     },
   },
 });
@@ -222,4 +227,5 @@ export const compSt = {
   tagContainer,
   tagImg,
   container,
+  progressRed,
 };
