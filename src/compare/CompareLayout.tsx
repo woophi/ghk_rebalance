@@ -1,8 +1,8 @@
 import { ProgressBar } from '@alfalab/core-components/progress-bar';
 import { Typography } from '@alfalab/core-components/typography';
 import { useEffect, useRef, useState } from 'react';
+import gaz from '../assets/gaz.png';
 import luk from '../assets/luk.png';
-import sber from '../assets/sber.png';
 import { compSt } from './style.css';
 import { useWindowListener } from './useEventListener';
 
@@ -66,9 +66,9 @@ const CompareProgress = () => {
     if (ref.current) {
       const width = ref.current.clientWidth;
       const firstDot = (48 * width) / 100 - 6;
-      const secondDot = (61 * width) / 100 - 8;
+      const secondDot = (38 * width) / 100 - 8;
       const thirdDot = (68 * width) / 100 - 6;
-      const fourthDot = (82 * width) / 100 - 8;
+      const fourthDot = (79 * width) / 100 - 8;
       setDotsPositons([firstDot, secondDot, thirdDot, fourthDot]);
     }
   }, []);
@@ -77,23 +77,23 @@ const CompareProgress = () => {
     if (ref.current) {
       const width = ref.current.clientWidth;
       const firstDot = (48 * width) / 100 - 6;
-      const secondDot = (61 * width) / 100 - 8;
+      const secondDot = (38 * width) / 100 - 8;
       const thirdDot = (68 * width) / 100 - 6;
-      const fourthDot = (82 * width) / 100 - 8;
+      const fourthDot = (79 * width) / 100 - 8;
       setDotsPositons([firstDot, secondDot, thirdDot, fourthDot]);
     }
   });
   return (
     <div className={compSt.progressContainer} ref={ref}>
-      <ProgressBar className={compSt.progress} value={61} view="attention" />
+      <ProgressBar className={compSt.progress} value={38} view="negative" />
       <Typography.Text view="secondary-medium" color="secondary" className={compSt.se({ position: 'left' })}>
         0
       </Typography.Text>
       <Typography.Text view="secondary-medium" color="secondary" className={compSt.se({ position: 'right' })}>
         10
       </Typography.Text>
-      <div className={compSt.dot({ color: 'orange', size: 's' })} style={{ left: dotsPositons[0] }} />
-      <div className={compSt.dot({ color: 'orange', size: 'm' })} style={{ left: dotsPositons[1] }} />
+      <div className={compSt.dot({ color: 'gray', size: 's' })} style={{ left: dotsPositons[0] }} />
+      <div className={compSt.dot({ color: 'red', size: 'm' })} style={{ left: dotsPositons[1] }} />
       <div className={compSt.dot({ color: 'gray', size: 's' })} style={{ left: dotsPositons[2] }} />
       <div className={compSt.dot({ color: 'green', size: 'm' })} style={{ left: dotsPositons[3] }} />
 
@@ -111,20 +111,20 @@ const CompareProgress = () => {
       </div>
 
       <div className={compSt.tagContainer} style={{ left: (dotsPositons[1] ?? 0) - 22 }}>
-        <div className={compSt.tag({ color: 'orange' })}>
-          <img src={sber} width={26} height={26} className={compSt.tagImg} />
+        <div className={compSt.tag({ color: 'red' })}>
+          <img src={gaz} width={26} height={26} className={compSt.tagImg} />
           <Typography.Text view="primary-small" color="primary-inverted">
-            6,1
+            3,8
           </Typography.Text>
         </div>
-        <div className={compSt.stick({ color: 'orange' })} />
+        <div className={compSt.stick({ color: 'red' })} />
       </div>
 
       <div className={compSt.tagContainer} style={{ left: (dotsPositons[3] ?? 0) - 22 }}>
         <div className={compSt.tag({ color: 'green' })}>
           <img src={luk} width={26} height={26} className={compSt.tagImg} />
           <Typography.Text view="primary-small" color="primary-inverted">
-            8,2
+            7,9
           </Typography.Text>
         </div>
         <div className={compSt.stick({ color: 'green' })} />

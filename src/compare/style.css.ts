@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 const progressContainer = style({
@@ -9,6 +9,10 @@ const progressContainer = style({
 });
 const progress = style({
   width: '100%',
+});
+
+globalStyle(`${progress} > div`, {
+  background: '#FF5431 !important',
 });
 
 const se = recipe({

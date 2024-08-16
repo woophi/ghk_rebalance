@@ -3,8 +3,8 @@ import { ButtonMobile } from '@alfalab/core-components/button/mobile';
 import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
 import { useState } from 'react';
+import gaz from './assets/gaz.png';
 import luk from './assets/luk.png';
-import sber from './assets/sber.png';
 import smile from './assets/smile.png';
 import { CompareLayout } from './compare/CompareLayout';
 import { LongreadLayout } from './longread/LongreadLayout';
@@ -33,19 +33,19 @@ export const App = () => {
         </Typography.TitleResponsive>
         <div className={appSt.bannersWrap}>
           <div className={appSt.banner}>
-            <img src={sber} width={48} height={48} className={appSt.bannerImg} />
+            <img src={gaz} width={48} height={48} className={appSt.bannerImg} />
 
             <div className={appSt.rowText}>
-              <Typography.Text view="component-primary">Сбербанк</Typography.Text>
+              <Typography.Text view="component-primary">Газпром</Typography.Text>
               <Typography.Text view="primary-small" color="secondary">
-                SBER
+                GAZP
               </Typography.Text>
             </div>
 
             <div className={appSt.shapeContainer}>
-              <Shape color="#FA9313" className={appSt.shapeBg} />
+              <Shape color="#FF5431" className={appSt.shapeBg} />
               <Typography.Text view="primary-small" color="primary-inverted" className={appSt.shapeText}>
-                6,1
+                3,8
               </Typography.Text>
             </div>
           </div>
@@ -63,7 +63,7 @@ export const App = () => {
             <div className={appSt.shapeContainer}>
               <Shape color="#0CC44D" className={appSt.shapeBg} />
               <Typography.Text view="primary-small" color="primary-inverted" className={appSt.shapeText}>
-                8,2
+                7,9
               </Typography.Text>
             </div>
           </div>
@@ -79,7 +79,7 @@ export const App = () => {
             <ButtonMobile
               style={{ width: '100%' }}
               view="primary"
-              href="alfabank://redirect_to_ai?link=a-investments://CA?type=isinFromCurrent&value=RU0009024277"
+              href="a-investments://CA?type=isinFromCurrent&value=RU0009024277"
             >
               Заменить
             </ButtonMobile>
