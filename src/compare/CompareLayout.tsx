@@ -146,7 +146,7 @@ export const CompareLayout = () => {
         rightCompany={{ color: 'green', value: 96, css: { marginLeft: '14px' }, adjustPosition: -7 }}
         total={{
           color: 'attention',
-          value: 56,
+          value: 60,
         }}
       />
       <Typography.Text view="primary-medium" defaultMargins={false}>
