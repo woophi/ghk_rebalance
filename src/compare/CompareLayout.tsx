@@ -213,7 +213,7 @@ export const CompareLayout = () => {
         leftCompany={{ value: 36, color: 'red' }}
         sector={{ color: 'gray', value: 44 }}
         imoex={{ color: 'gray', value: 65 }}
-        rightCompany={{ color: 'green', value: 65 }}
+        rightCompany={{ color: 'orange', value: 65 }}
         total={{
           color: 'negative',
           value: 36,

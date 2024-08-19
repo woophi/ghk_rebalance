@@ -20,7 +20,8 @@ export const App = () => {
     <>
       <div className={appSt.container}>
         <Typography.Text view="primary-medium">
-          В вашем портфеле две бумаги имеют Альфа-рейтинг ниже чем бумаги из того же сектора. Не является ИИР.
+          В вашем портфеле имеются бумаги, имеющие низкий Альфа-рейтинг. Предлагаем заменить на бумаги того же сектора с
+          более высоким Альфа-рейтингом. Не является ИИР.
         </Typography.Text>
 
         <div className={appSt.banner} onClick={() => setLongread(true)}>
@@ -76,11 +77,7 @@ export const App = () => {
             </ButtonMobile>
           </Grid.Col>
           <Grid.Col width="6">
-            <ButtonMobile
-              style={{ width: '100%' }}
-              view="primary"
-              href="a-investments://CA?type=isinFromCurrent&value=RU0009024277"
-            >
+            <ButtonMobile style={{ width: '100%' }} view="primary" href="https://alfa.me/AI_LKOH_RU0009024277">
               Заменить
             </ButtonMobile>
           </Grid.Col>
