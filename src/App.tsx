@@ -2,7 +2,7 @@ import { BottomSheet } from '@alfalab/core-components/bottom-sheet';
 import { ButtonMobile } from '@alfalab/core-components/button/mobile';
 import { Grid } from '@alfalab/core-components/grid';
 import { Typography } from '@alfalab/core-components/typography';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import gaz from './assets/gaz.png';
 import luk from './assets/luk.png';
 import smile from './assets/smile.png';
@@ -11,10 +11,29 @@ import { LongreadLayout } from './longread/LongreadLayout';
 import { lrSt } from './longread/style.css';
 import { Shape } from './Shape';
 import { appSt } from './style.css';
+import './utils/events';
 
 export const App = () => {
   const [compareShow, setCompare] = useState(false);
   const [longreadShow, setLongread] = useState(false);
+
+  const howToClick = useCallback(() => {
+    window.gtag('event', '3135_how_we_evaluate_click');
+    setLongread(true);
+  }, []);
+  const howToClose = useCallback(() => {
+    window.gtag('event', '3135_alfa_rating_close_click');
+    setLongread(true);
+  }, []);
+
+  const compareClose = useCallback(() => {
+    window.gtag('event', '3135_comparison_close_click');
+    setCompare(false);
+  }, []);
+  const compareClick = useCallback(() => {
+    window.gtag('event', '3135_compare_click');
+    setCompare(true);
+  }, []);
 
   return (
     <>
@@ -28,7 +47,7 @@ export const App = () => {
           более высоким Альфа-рейтингом. Не является ИИР.
         </Typography.Text>
 
-        <div className={appSt.banner} onClick={() => setLongread(true)}>
+        <div className={appSt.banner} onClick={howToClick}>
           <img src={smile} width={40} height={40} />
           <Typography.Text view="component-primary">Как мы оцениваем бумаги</Typography.Text>
         </div>
@@ -76,7 +95,7 @@ export const App = () => {
 
         <Grid.Row gutter={16}>
           <Grid.Col width="6">
-            <ButtonMobile style={{ width: '100%' }} view="secondary" onClick={() => setCompare(true)}>
+            <ButtonMobile style={{ width: '100%' }} view="secondary" onClick={compareClick}>
               Сравнить
             </ButtonMobile>
           </Grid.Col>
@@ -85,6 +104,7 @@ export const App = () => {
               style={{ width: '100%' }}
               view="primary"
               href="a-investments://CA?type=isinFromCurrent&value=RU0009024277"
+              onClick={() => window.gtag('event', '3135_change_click')}
             >
               Заменить
             </ButtonMobile>
@@ -99,7 +119,7 @@ export const App = () => {
           </Typography.Text>
         }
         open={longreadShow}
-        onClose={() => setLongread(false)}
+        onClose={howToClose}
         titleAlign="center"
         stickyHeader
         hasCloser
@@ -114,7 +134,7 @@ export const App = () => {
           </Typography.Text>
         }
         open={compareShow}
-        onClose={() => setCompare(false)}
+        onClose={compareClose}
         titleAlign="center"
         stickyHeader
         hasCloser
