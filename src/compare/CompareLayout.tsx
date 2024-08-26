@@ -14,13 +14,13 @@ export const CompareLayout = () => {
         Потенциал роста
       </Typography.TitleResponsive>
       <CompareProgress
-        leftCompany={{ value: 44, color: 'red' }}
+        leftCompany={{ value: 54, color: 'orange' }}
         imoex={{ color: 'gray', value: 65 }}
-        rightCompany={{ color: 'green', value: 90 }}
-        sector={{ color: 'gray', value: 51 }}
+        rightCompany={{ color: 'green', value: 70 }}
+        sector={{ color: 'orange', value: 51 }}
         total={{
-          color: 'negative',
-          value: 44,
+          color: 'attention',
+          value: 54,
         }}
       />
       <div>
@@ -45,13 +45,13 @@ export const CompareLayout = () => {
         Бизнес показатели
       </Typography.TitleResponsive>
       <CompareProgress
-        leftCompany={{ value: 24, color: 'red' }}
+        leftCompany={{ value: 26, color: 'red' }}
         imoex={{ color: 'gray', value: 65 }}
-        rightCompany={{ color: 'orange', value: 63 }}
+        rightCompany={{ color: 'orange', value: 61 }}
         sector={{ color: 'gray', value: 45 }}
         total={{
           color: 'negative',
-          value: 24,
+          value: 26,
         }}
       />
       <div>
@@ -210,13 +210,13 @@ export const CompareLayout = () => {
         История торгов
       </Typography.TitleResponsive>
       <CompareProgress
-        leftCompany={{ value: 36, color: 'red' }}
+        leftCompany={{ value: 19, color: 'red' }}
         sector={{ color: 'gray', value: 44 }}
         imoex={{ color: 'gray', value: 65 }}
-        rightCompany={{ color: 'orange', value: 65 }}
+        rightCompany={{ color: 'green', value: 75 }}
         total={{
           color: 'negative',
-          value: 36,
+          value: 19,
         }}
       />
 
@@ -342,7 +342,7 @@ const CompareProgress = ({ total, sector, leftCompany, imoex, rightCompany }: Pr
         <div className={compSt.tag({ color: rightCompany.color })}>
           <img src={luk} width={26} height={26} className={compSt.tagImg} />
           <Typography.Text view="primary-small" color="primary-inverted">
-            {rightCompany.value === 80 || rightCompany.value === 90
+            {rightCompany.value.toString().includes('0')
               ? (rightCompany.value / 10).toFixed(1).replace('.', ',')
               : (rightCompany.value / 10).toLocaleString('ru')}
           </Typography.Text>

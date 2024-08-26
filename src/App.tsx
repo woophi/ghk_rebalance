@@ -69,7 +69,7 @@ export const App = () => {
             <div className={appSt.shapeContainer}>
               <Shape color="#FF5431" className={appSt.shapeBg} />
               <Typography.Text view="primary-small" color="primary-inverted" className={appSt.shapeText}>
-                3,8
+                3,7
               </Typography.Text>
             </div>
           </div>
@@ -87,7 +87,7 @@ export const App = () => {
             <div className={appSt.shapeContainer}>
               <Shape color="#0CC44D" className={appSt.shapeBg} />
               <Typography.Text view="primary-small" color="primary-inverted" className={appSt.shapeText}>
-                7,9
+                7,7
               </Typography.Text>
             </div>
           </div>
