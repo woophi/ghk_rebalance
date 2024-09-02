@@ -14,13 +14,13 @@ export const CompareLayout = () => {
         Потенциал роста
       </Typography.TitleResponsive>
       <CompareProgress
-        leftCompany={{ value: 54, color: 'orange' }}
+        leftCompany={{ value: 38, color: 'red' }}
         imoex={{ color: 'gray', value: 65 }}
-        rightCompany={{ color: 'green', value: 70 }}
-        sector={{ color: 'orange', value: 51 }}
+        rightCompany={{ color: 'green', value: 75 }}
+        sector={{ color: 'gray', value: 51 }}
         total={{
-          color: 'attention',
-          value: 54,
+          color: 'negative',
+          value: 38,
         }}
       />
       <div>
@@ -45,13 +45,13 @@ export const CompareLayout = () => {
         Бизнес показатели
       </Typography.TitleResponsive>
       <CompareProgress
-        leftCompany={{ value: 26, color: 'red' }}
+        leftCompany={{ value: 27, color: 'red' }}
         imoex={{ color: 'gray', value: 65 }}
-        rightCompany={{ color: 'orange', value: 61 }}
+        rightCompany={{ color: 'orange', value: 64 }}
         sector={{ color: 'gray', value: 45 }}
         total={{
           color: 'negative',
-          value: 26,
+          value: 27,
         }}
       />
       <div>
@@ -93,13 +93,13 @@ export const CompareLayout = () => {
         Дивиденды
       </Typography.TitleResponsive>
       <CompareProgress
-        leftCompany={{ value: 18, color: 'red' }}
+        leftCompany={{ value: 17, color: 'red' }}
         imoex={{ color: 'gray', value: 65 }}
         rightCompany={{ color: 'green', value: 80 }}
         sector={{ color: 'gray', value: 58, adjustPosition: -20 }}
         total={{
           color: 'negative',
-          value: 18,
+          value: 17,
         }}
       />
 
@@ -210,13 +210,13 @@ export const CompareLayout = () => {
         История торгов
       </Typography.TitleResponsive>
       <CompareProgress
-        leftCompany={{ value: 19, color: 'red' }}
+        leftCompany={{ value: 36, color: 'red' }}
         sector={{ color: 'gray', value: 44 }}
         imoex={{ color: 'gray', value: 65 }}
-        rightCompany={{ color: 'green', value: 75 }}
+        rightCompany={{ color: 'green', value: 70 }}
         total={{
           color: 'negative',
-          value: 19,
+          value: 36,
         }}
       />
 
