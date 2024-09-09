@@ -14,13 +14,13 @@ export const CompareLayout = () => {
         Потенциал роста
       </Typography.TitleResponsive>
       <CompareProgress
-        leftCompany={{ value: 38, color: 'red' }}
+        leftCompany={{ value: 44, color: 'orange' }}
         imoex={{ color: 'gray', value: 65 }}
-        rightCompany={{ color: 'green', value: 75 }}
+        rightCompany={{ color: 'green', value: 70 }}
         sector={{ color: 'gray', value: 51 }}
         total={{
-          color: 'negative',
-          value: 38,
+          color: 'attention',
+          value: 44,
         }}
       />
       <div>
@@ -143,7 +143,7 @@ export const CompareLayout = () => {
         leftCompany={{ value: 66, color: 'orange', adjustPosition: -25 }}
         sector={{ color: 'gray', value: 70 }}
         imoex={{ color: 'orange', value: 65, adjustPosition: -25 }}
-        rightCompany={{ color: 'green', value: 96, css: { marginLeft: '14px' }, adjustPosition: -7 }}
+        rightCompany={{ color: 'green', value: 92, css: { marginLeft: '14px' }, adjustPosition: -7 }}
         total={{
           color: 'attention',
           value: 60,
@@ -210,13 +210,13 @@ export const CompareLayout = () => {
         История торгов
       </Typography.TitleResponsive>
       <CompareProgress
-        leftCompany={{ value: 36, color: 'red' }}
+        leftCompany={{ value: 34, color: 'red' }}
         sector={{ color: 'gray', value: 44 }}
         imoex={{ color: 'gray', value: 65 }}
-        rightCompany={{ color: 'green', value: 70 }}
+        rightCompany={{ color: 'green', value: 80 }}
         total={{
           color: 'negative',
-          value: 36,
+          value: 34,
         }}
       />
 
