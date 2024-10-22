@@ -18,20 +18,20 @@ export const App = () => {
   const [longreadShow, setLongread] = useState(false);
 
   const howToClick = useCallback(() => {
-    window.gtag('event', '3135_how_we_evaluate_click');
+    window.gtag('event', '3443_how_we_evaluate_click');
     setLongread(true);
   }, []);
   const howToClose = useCallback(() => {
-    window.gtag('event', '3135_alfa_rating_close_click');
+    window.gtag('event', '3443_alfa_rating_close_click');
     setLongread(true);
   }, []);
 
   const compareClose = useCallback(() => {
-    window.gtag('event', '3135_comparison_close_click');
+    window.gtag('event', '3443_comparison_close_click');
     setCompare(false);
   }, []);
   const compareClick = useCallback(() => {
-    window.gtag('event', '3135_compare_click');
+    window.gtag('event', '3443_compare_click');
     setCompare(true);
   }, []);
 
@@ -104,7 +104,7 @@ export const App = () => {
               style={{ width: '100%' }}
               view="primary"
               href="a-investments://CA?type=isinFromCurrent&value=RU0009024277"
-              onClick={() => window.gtag('event', '3135_change_click')}
+              onClick={() => window.gtag('event', '3443_change_click')}
             >
               Заменить
             </ButtonMobile>
